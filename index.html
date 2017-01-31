@@ -17,62 +17,70 @@
 
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-2">
-        <label for="number-of-travelers">Number of Travelers:</label>
-        <select class="form-control" id="traveler-number">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-        </select>
-      </div>
-      <div class="col-md-5">
-        <label for="depart-location">Departure Location:</label>
-        <select class="form-control" id="depart-location">
-          <option>Seattle</option>
-          <option>Los Angeles</option>
-          <option>San Francisco</option>
-          <option>Reno</option>
-          <option>Austin</option>
-          <option>Chicago</option>
-          <option>New York</option>
-          <option>Miami</option>
-        </select>
-      </div>
-      <div class="col-md-5">
-        <label for="depart-location">Destination:</label>
-        <select class="form-control" id="depart-location">
-          <option>Narnia</option>
-          <option>Hogwarts</option>
-          <option>Oz</option>
-          <option>Hobbiton</option>
-          <option>The Upside-Down</option>
-          <option>King's Landing</option>
-          <option>Back to the Future</option>
-          <option>Jurassic Park</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="departure">Departure Date:</label>
-          <input id="departure" class="form-control" type="date">
+    <form id="flight-search">
+      <div class="row">
+        <div class="col-md-2">
+          <label for="number-of-travelers">Number of Travelers:</label>
+          <select class="form-control" id="traveler-number">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <label for="depart-location">Departure Location:</label>
+          <select class="form-control" id="depart-location">
+            <option>Seattle</option>
+            <option>Los Angeles</option>
+            <option>San Francisco</option>
+            <option>Reno</option>
+            <option>Austin</option>
+            <option>Chicago</option>
+            <option>New York</option>
+            <option>Miami</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <label for="destination-location">Destination:</label>
+          <select class="form-control" id="destination-location">
+            <option>Narnia</option>
+            <option>Hogwarts</option>
+            <option>Oz</option>
+            <option>Hobbiton</option>
+            <option>The Upside-Down</option>
+            <option>King's Landing</option>
+            <option>Back to the Future</option>
+            <option>Jurassic Park</option>
+          </select>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="return">Return Date:</label>
-          <input id="return" class="form-control" type="date">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="departure">Departure Date:</label>
+            <input id="departure" class="form-control" type="date">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="return">Return Date:</label>
+            <input id="return" class="form-control" type="date">
+          </div>
         </div>
       </div>
-    </div>
+      <button type="submit" class="btn btn-info">Check flights</button>
+    </form>
   </div>
+  <div class="flight-options">
+
+  </div>
+
+
   <div class="container">
     <h2>Enter your information</h2>
     <form id="new-passenger">
@@ -101,11 +109,12 @@
           <option>Port-key</option>
           <option>First-class</option>
           <option>Business</option>
-          <option>Coach</option>\
+          <option>Coach</option>
         </select>
       </div>
+      <button type="submit" class="btn btn-info">Check flights</button>
+    </form>
     </div>
-  </form>
 
   <div class="container">
     <div class="row">
@@ -125,5 +134,6 @@
       </div>
     </div>
   </div>
+
 </body>
 </html>
