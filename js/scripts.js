@@ -17,7 +17,7 @@ var matchingFlightText = "";
 var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
     flights.forEach(function(flight) {
       if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
-        matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + flight.departureTime + " " + flight.destinationLocation + " " + flight.destinationTime + "</td><td>$" + flight.price;
+        matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + "<span class='departureTime'>" + flight.departureTime + "</span>"+ " - " + flight.destinationLocation + " " +  "<span class='departureTime'>" + flight.destinationTime + "</span>"+ "</td><td>$" + flight.price + "</tr>";
       }
 
     });
