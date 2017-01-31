@@ -15,6 +15,18 @@ var createFlights = function() {
       var flightNumber = Math.floor(Math.random() * (900)) + 100;
       var departureTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 AM";
       var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
+      var price = 899
+      if (individualDestinationLocation === "The Upside-Down") {
+        price -= 700;
+      } else if (individualDestinationLocation === "Hogwarts") {
+        price += 1500;
+      } else if (individualDestinationLocation === "Jurassic Park") {
+        price += 1000;
+      } else if (flightNumber > 500) {
+        price -= 121;
+      }
+
+
 
 
     });
