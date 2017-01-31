@@ -75,4 +75,8 @@ $(document).ready(function() {
     $("span#gateNumber").text(generatedGate);
 
   });
+
+  $("tr").click(function(){
+    
+  });
 });
