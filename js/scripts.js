@@ -19,6 +19,7 @@ var flightSearch = function(selectedDepartureLocation, selectedDestinationLocati
       if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
         matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + flight.departureTime + " " + flight.destinationLocation + " " + flight.destinationTime + "</td><td>$" + flight.price;
       }
+
     });
 }
 
@@ -36,7 +37,8 @@ $(document).ready(function() {
     var selectedDestinationLocation = $("#destination-location").val();
 
     flightSearch(selectedDepartureLocation, selectedDestinationLocation);
-    (matchingFlightText);
+
+    $(".flight-options").append(matchingFlightText);
 
 
   });
