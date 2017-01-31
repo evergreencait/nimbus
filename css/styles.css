@@ -1,0 +1,14 @@
+.navbar-inverse {
+  background-color: #276d84;
+  font-family: 'Amatic SC', cursive;
+}
+
+.navbar-right {
+  padding-right: 40px;
+}
+
+.navbar-brand {
+  font-size: 60px;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
