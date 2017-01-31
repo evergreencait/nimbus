@@ -15,11 +15,11 @@ var flights = [flight121, flight123];
 var matchingFlightText = "";
 
 var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
-    flights.forEach(flight) {
+    flights.forEach(function(flight) {
       if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
-        matchingFlightText += 
+        matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + flight.departureTime + " " + flight.destinationLocation + " " + flight.destinationTime + "</td><td>$" + flight.price;
       }
-    }
+    });
 }
 
 
@@ -34,6 +34,9 @@ $(document).ready(function() {
 
     var selectedDepartureLocation = $("#depart-location").val();
     var selectedDestinationLocation = $("#destination-location").val();
+
+    flightSearch(selectedDepartureLocation, selectedDestinationLocation);
+    console.log(matchingFlightText);
 
 
   });
