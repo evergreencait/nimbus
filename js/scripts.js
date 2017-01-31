@@ -23,7 +23,13 @@ var flightSearch = function(selectedDepartureLocation, selectedDestinationLocati
     });
 }
 
+function randomSeat () {
+  return parseInt(Math.floor(Math.random() * 36 ) + 1);
+}
 
+function randomGate () {
+  return parseInt(Math.floor(Math.random() * 18 ) + 1);
+}
 
 
 
@@ -35,12 +41,17 @@ $(document).ready(function() {
 
     var selectedDepartureLocation = $("#depart-location").val();
     var selectedDestinationLocation = $("#destination-location").val();
+    var selectedDateDeparture = $("input.departureDate").val();
+    var selectedDateArrival = $("input.returnDate").val();
 
     flightSearch(selectedDepartureLocation, selectedDestinationLocation);
 
     $(".flight-options").append(matchingFlightText);
 
-
+      $("span.departure").text(selectedDepartureLocation);
+      $("span.destination").text(selectedDestinationLocation);
+      $("span.date1").text(selectedDateDeparture);
+      $("span.date2").text(selectedDateArrival);
   });
 
   $("form#new-passenger").submit(function(event) {
@@ -55,9 +66,13 @@ $(document).ready(function() {
 
     var inputtedEmail = $("#email").val();
     var inputtedClass = $("#travelClass").val();
+    var generatedSeat = randomSeat();
+    var generatedGate = randomGate();
 
     $("span.travelClass").text(inputtedClass);
     $("span.email").text(inputtedEmail);
+    $("span#seatNumber").text(generatedSeat);
+    $("span#gateNumber").text(generatedGate);
 
   });
 });
