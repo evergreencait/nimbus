@@ -14,3 +14,13 @@ var flight123 = new Flight(123, "Los Angeles", "5:30a", "Narnia", "7:40p", 890);
 
 
 //front-end logic
+$(document).ready(function() {
+  $("form#flight-search").submit(function(event) {
+    event.preventDefault();
+
+    var selectedDepartureLocation = $("#depart-location").val();
+    var selectedDestinationLocation = $("#destination-location").val();
+
+
+  });
+});
