@@ -40,12 +40,16 @@ $(document).ready(function() {
 
     var selectedDepartureLocation = $("#depart-location").val();
     var selectedDestinationLocation = $("#destination-location").val();
+    var selectedDateDeparture = $("input.departureDate").val();
+    var selectedDateArrival = $("input.returnDate").val();
 
     flightSearch(selectedDepartureLocation, selectedDestinationLocation);
     (matchingFlightText);
 
       $("span.departure").text(selectedDepartureLocation);
       $("span.destination").text(selectedDestinationLocation);
+      $("span.date1").text(selectedDateDeparture);
+      $("span.date2").text(selectedDateArrival);
   });
 
   $("form#new-passenger").submit(function(event) {
