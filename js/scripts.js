@@ -7,11 +7,33 @@ function Flight(number, departureLocation, departureTime, destinationLocation, d
   this.destinationTime = destinationTime,
   this.price = price
 }
+var flight123 = new Flight(123, "Seattle", "5:30a", "Narnia", "7:40p", 890);
 
-var flight121 = new Flight(121, "Seattle", "8:30a", "Narnia", "5:30p", 890);
-var flight123 = new Flight(123, "Los Angeles", "5:30a", "Narnia", "7:40p", 890);
+var createFlights = function() {
+  departureLocation.forEach(function(individualDepartureLocation) {
+    destinationLocation.forEach(function(individualDestinationLocation) {
+      var flightNumber = Math.floor(Math.random() * (900)) + 100;
+      var departureTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 AM";
+      var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
+      var price = 899
+      if (individualDestinationLocation === "The Upside-Down") {
+        price -= 700;
+      } else if (individualDestinationLocation === "Hogwarts") {
+        price += 1500;
+      } else if (individualDestinationLocation === "Jurassic Park") {
+        price += 1000;
+      } else if (flightNumber > 500) {
+        price -= 121;
+      }
 
-var flights = [flight121, flight123];
+
+
+
+    });
+  });
+}
+
+var flights = [flight123];
 var matchingFlightText = "";
 
 var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
