@@ -36,7 +36,7 @@ $(document).ready(function() {
     var selectedDestinationLocation = $("#destination-location").val();
 
     flightSearch(selectedDepartureLocation, selectedDestinationLocation);
-    console.log(matchingFlightText);
+    (matchingFlightText);
 
 
   });
