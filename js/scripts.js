@@ -15,11 +15,11 @@ var flights = [flight121, flight123];
 var matchingFlightText = "";
 
 var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
-    flights.forEach(function(flight) {
-      if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
-        matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + flight.departureTime + " " + flight.destinationLocation + " " + flight.destinationTime + "</td><td>$" + flight.price;
-      }
-    });
+  flights.forEach(function(flight) {
+    if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+      matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + flight.departureTime + " " + flight.destinationLocation + " " + flight.destinationTime + "</td><td>$" + flight.price;
+    }
+  });
 }
 
 function randomSeat () {
@@ -44,7 +44,8 @@ $(document).ready(function() {
     flightSearch(selectedDepartureLocation, selectedDestinationLocation);
     (matchingFlightText);
 
-
+      $("span.departure").text(selectedDepartureLocation);
+      $("span.destination").text(selectedDestinationLocation);
   });
 
   $("form#new-passenger").submit(function(event) {
