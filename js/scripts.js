@@ -26,21 +26,19 @@ $(document).ready(function() {
 
   $("form#new-passenger").submit(function(event) {
     event.preventDefault();
-    var inputtedFirstName = $("#new-first-name").val();
-    var inputtedLastName = $("#new-last-name").val();
-    var firstToUpper = inputtedFirstName.toUpperCase();
-    var lastToUpper = inputtedLastName.toUpperCase();
-    var inputtedEmail = $("#new-email").val();
-    var inputtedClass = $("#class-choice").val();
+    var inputs = ["lastName", "firstName"];
 
+    inputs.forEach(function(input) {
+      var userInput = $("input#" + input).val();
+      var inputUpper = userInput.toUpperCase();
+      $("span." + input).text(inputUpper);
+    });
 
-    $("span#lastName").text(lastToUpper);
-    $("span#firstName").text(firstToUpper);
-    $("span#travelClass").text(inputtedClass);
-    $("span#email").text(inputtedEmail);
+    var inputtedEmail = $("#email").val();
+    var inputtedClass = $("#travelClass").val();
+
+    $("span.travelClass").text(inputtedClass);
+    $("span.email").text(inputtedEmail);
 
   });
-
-
-
 });
