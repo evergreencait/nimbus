@@ -23,4 +23,20 @@ $(document).ready(function() {
 
 
   });
+
+  $("form#new-passenger").submit(function(event) {
+    event.preventDefault();
+    var inputtedFirstName = $("#new-first-name").val();
+    var inputtedLastName = $("#new-last-name").val();
+    var firstToUpper = inputtedFirstName.toUpperCase();
+    var lastToUpper = inputtedLastName.toUpperCase();
+
+
+    $("span#lastName").text(lastToUpper);
+    $("span#firstName").text(firstToUpper);
+
+  });
+
+
+
 });
