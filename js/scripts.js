@@ -9,9 +9,15 @@ function Flight(number, departureLocation, departureTime, destinationLocation, d
 }
 var flight123 = new Flight(123, "Seattle", "5:30a", "Narnia", "7:40p", 890);
 
+var flights = [flight123];
+var departureArray = ["Seattle", "Los Angeles", "San Francisco", "Reno", "Austin", "Chicago", "New York", "Miami"];
+var destinationArray = ["Narnia", "Hogwarts", "Oz", "Hobbiton", "The Upside-Down", "King's Landing", "Jurassic Park", "Back to the Future"];
+var matchingFlightText = "";
+
+
 var createFlights = function() {
-  departureLocation.forEach(function(individualDepartureLocation) {
-    destinationLocation.forEach(function(individualDestinationLocation) {
+  departureArray.forEach(function(individualDepartureLocation) {
+    destinationArray.forEach(function(individualDestinationLocation) {
       var flightNumber = Math.floor(Math.random() * (900)) + 100;
       var departureTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 AM";
       var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
@@ -26,15 +32,14 @@ var createFlights = function() {
         price -= 121;
       }
 
+      var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime, price);
 
-
+      flights.push(newFlight);
 
     });
   });
 }
 
-var flights = [flight123];
-var matchingFlightText = "";
 
 var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
     flights.forEach(function(flight) {
@@ -58,6 +63,7 @@ function randomGate () {
 
 //front-end logic
 $(document).ready(function() {
+  createFlights();
   $("form#flight-search").submit(function(event) {
     event.preventDefault();
 
