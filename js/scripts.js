@@ -76,7 +76,14 @@ $(document).ready(function() {
 
   });
 
-  $("tr").click(function(){
-    
+  $("tr td").click(function(){
+    var number = $(this).children(":first-child").textContent;
+    console.log($(this));
+    alert(number);
+
+    var chosenFlight = new Flight(number);
+
+    $("span#flightNumber").text(chosenFlight);
+
   });
 });
