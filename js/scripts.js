@@ -30,10 +30,14 @@ $(document).ready(function() {
     var inputtedLastName = $("#new-last-name").val();
     var firstToUpper = inputtedFirstName.toUpperCase();
     var lastToUpper = inputtedLastName.toUpperCase();
+    var inputtedEmail = $("#new-email").val();
+    var inputtedClass = $("#class-choice").val();
 
 
     $("span#lastName").text(lastToUpper);
     $("span#firstName").text(firstToUpper);
+    $("span#travelClass").text(inputtedClass);
+    $("span#email").text(inputtedEmail);
 
   });
 
