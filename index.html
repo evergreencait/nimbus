@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/scripts.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Bad+Script|Cabin+Sketch|Cinzel|Homemade+Apple|Kameron|PT+Sans+Narrow|Pacifico|Pattaya|Playball|Quicksand|Raleway" rel="stylesheet">
   <meta charset="utf-8">
   <title>Air Nimbus</title>
 </head>
@@ -16,11 +17,11 @@
   </div>
   <div class="container">
 
-
+    <h2>There's no knowing where you might be swept off to...</h2>
     <form id="flight-search">
       <div class="row">
         <div class="col-xs-2">
-          <label for="number-of-travelers">Number of Travelers:</label>
+          <label for="number-of-travelers">Travelers:</label>
           <select class="form-control" id="traveler-number">
             <option>1</option>
             <option>2</option>
@@ -45,7 +46,7 @@
             <option>Miami</option>
           </select>
         </div>
-        <div class="col-md-5">
+        <div class="col-xs-5">
           <label for="destination-location">Destination:</label>
           <select class="form-control" id="destination-location">
             <option>Narnia</option>
@@ -59,7 +60,7 @@
           </select>
         </div>
       </div>
-      <div class="row">
+      <div class="row days">
         <div class="col-xs-6">
           <div class="form-group">
             <label for="departure">Departure Date:</label>
@@ -132,7 +133,7 @@
           <div class="col-md-7 details">
             <h4><span class="lastName"></span>, <span class="firstName"></span>           </h4>
             <h6><span class="travelClass"></span></h6>
-            <h4><span class="departure"></span> --> <span class="destination"></span></h4>
+            <h4><span class="departure"></span> <img id="plane" src="img/plane.png" alt="plane icon" /> <span class="destination"></span></h4>
             <h4 id = "barcodeline">Seat: <span id="seatNumber"></span>   Gate: <span id="gateNumber"></span>  <img id = "mainbar" src="img/barcode.jpg" alt="an image of a barcode" /></h4>
           </div>
           <div class="col-md-4 flight">
