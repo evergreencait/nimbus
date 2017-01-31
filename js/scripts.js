@@ -22,7 +22,13 @@ var flightSearch = function(selectedDepartureLocation, selectedDestinationLocati
     });
 }
 
+function randomSeat () {
+  return parseInt(Math.floor(Math.random() * 36 ) + 1);
+}
 
+function randomGate () {
+  return parseInt(Math.floor(Math.random() * 18 ) + 1);
+}
 
 
 
@@ -53,9 +59,13 @@ $(document).ready(function() {
 
     var inputtedEmail = $("#email").val();
     var inputtedClass = $("#travelClass").val();
+    var generatedSeat = randomSeat();
+    var generatedGate = randomGate();
 
     $("span.travelClass").text(inputtedClass);
     $("span.email").text(inputtedEmail);
+    $("span#seatNumber").text(generatedSeat);
+    $("span#gateNumber").text(generatedGate);
 
   });
 });
