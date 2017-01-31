@@ -11,6 +11,20 @@ function Flight(number, departureLocation, departureTime, destinationLocation, d
 var flight121 = new Flight(121, "Seattle", "8:30a", "Narnia", "5:30p", 890);
 var flight123 = new Flight(123, "Los Angeles", "5:30a", "Narnia", "7:40p", 890);
 
+var flights = [flight121, flight123];
+var matchingFlightText = "";
+
+var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
+    flights.forEach(flight) {
+      if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+        matchingFlightText += 
+      }
+    }
+}
+
+
+
+
 
 
 //front-end logic

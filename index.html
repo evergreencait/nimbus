@@ -14,9 +14,9 @@
     <a class="navbar-brand" href="index.html">Air Nimbus</a>
     <a class="navbar-brand navbar-right" href="index.html">Home</a>
   </div>
-
-
   <div class="container">
+
+
     <form id="flight-search">
       <div class="row">
         <div class="col-md-2">
@@ -75,13 +75,18 @@
       </div>
       <button type="submit" class="btn btn-info">Check flights</button>
     </form>
-  </div>
-  <div class="flight-options">
-
-  </div>
-
-
-  <div class="container">
+  <div class="panel panel-default">
+  <div class="panel-heading">Choose your flight:</div>
+  <table class="table flight-options">
+    <tr>
+      <td></td>
+      <td>Flight Number</td>
+      <td>Departure Arrival</td>
+      <td>Ticket Price</td>
+  </table>
+</div>
+  <div>
+    <!--used to be container -->
     <h2>Enter your information</h2>
     <form id="new-passenger">
       <div class="form-group">
@@ -116,7 +121,8 @@
     </form>
     </div>
 
-  <div class="container">
+  <div>
+<!--used to be container -->
     <div class="row">
       <div class="col-md-7 details">
         <h4><span id="lastName"></span>, <span id="firstName"></span></h4>
@@ -134,6 +140,7 @@
       </div>
     </div>
   </div>
+</div>
 
 </body>
 </html>
