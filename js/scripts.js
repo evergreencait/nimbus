@@ -40,4 +40,22 @@ $(document).ready(function() {
 
 
   });
+
+  $("form#new-passenger").submit(function(event) {
+    event.preventDefault();
+    var inputs = ["lastName", "firstName"];
+
+    inputs.forEach(function(input) {
+      var userInput = $("input#" + input).val();
+      var inputUpper = userInput.toUpperCase();
+      $("span." + input).text(inputUpper);
+    });
+
+    var inputtedEmail = $("#email").val();
+    var inputtedClass = $("#travelClass").val();
+
+    $("span.travelClass").text(inputtedClass);
+    $("span.email").text(inputtedEmail);
+
+  });
 });

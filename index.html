@@ -91,33 +91,33 @@
     <form id="new-passenger">
       <div class="form-group">
         <label for="new-first-name">First name</label>
-        <input type="text" class="form-control" id="new-first-name">
+        <input type="text" class="form-control" id="firstName">
       </div>
       <div class="form-group">
         <label for="new-last-name">Last name</label>
-        <input type="text" class="form-control" id="new-last-name">
+        <input type="text" class="form-control" id="lastName">
       </div>
 
       <div id="new-emails">
         <div class="new-email">
           <div class="form-group">
             <label for="new-email">Email Address:</label>
-            <input type="text" class="form-control new-street">
+            <input type="text" class="form-control" id="email">
           </div>
         </div>
       </div>
 
       <div class="class-choice">
         <label>Travel class</label>
-        <select class="form-control" id="class-choice">
+        <select class="form-control" id="travelClass">
           <option></option>
           <option>Port-key</option>
-          <option>First-class</option>
-          <option>Business</option>
+          <option>First class</option>
+          <option>Business class</option>
           <option>Coach</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-info">Check flights</button>
+      <button type="submit" class="btn btn-info">Book your flight!</button>
     </form>
     </div>
 
@@ -125,20 +125,22 @@
 <!--used to be container -->
     <div class="row">
       <div class="col-md-7 details">
-        <h4><span id="lastName"></span>, <span id="firstName"></span></h4>
-        <h4><span id="departure"></span> --> <span id="destination"></span></h4>
+        <h4><span class="lastName"></span>, <span class="firstName"></span>           </h4>
+        <h6><span class="travelClass"></span></h6>
+        <h4><span class="departure"></span> --> <span class="destination"></span></h4>
         <h4 id = "barcodeline"><span id="randomNumber"></span>   Gate #: <span id="randomNumber2"></span>  <img id = "mainbar" src="img/barcode.jpg" alt="an image of a barcode" /></h4>
       </div>
       <div class="col-md-4 flight">
-        <h2><span id="departTime"></span></h2>
-        <h3><span id="landTime"></span></h3>
-        <h3><span id="date"></span></h3>
+        <h2><span class="departTime"></span></h2>
+        <h3><span class="landTime"></span></h3>
+        <h3><span class="date1"></span><span class="date2"></span></h3>
         <h5>Flight #<span id="flightNumber"></span></h5>
       </div>
       <div class="col-md-1 sidebar">
         <img id = "sidebar" src="img/sidebar.jpg" alt="image of sideways barcode" />
       </div>
     </div>
+    <h6>Your confirmation will be emailed to you at <span class="email"></span>.</h6>
   </div>
 </div>
 
