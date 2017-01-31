@@ -55,9 +55,13 @@ $(document).ready(function() {
 
       $("tr").click(function(){
         var number = $(this).children(":nth-child(2)").text();
-        console.log(number);
-        var chosenFlight = new Flight(number);
+        var departureTime = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
+        var landingTime = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
+        console.log(landingTime);
+        var chosenFlight = new Flight(number, departureTime);
         $("span#flightNumber").text(chosenFlight.number);
+        $("span#departTime").text(departureTime);
+        $("span#landTime").text(landingTime);
       });
 
   });
