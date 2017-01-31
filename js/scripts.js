@@ -52,6 +52,14 @@ $(document).ready(function() {
       $("span.destination").text(selectedDestinationLocation);
       $("span.date1").text(selectedDateDeparture);
       $("span.date2").text(selectedDateArrival);
+
+      $("tr").click(function(){
+        var number = $(this).children(":nth-child(2)").text();
+        console.log(number);
+        var chosenFlight = new Flight(number);
+        $("span#flightNumber").text(chosenFlight.number);
+      });
+
   });
 
   $("form#new-passenger").submit(function(event) {
@@ -76,14 +84,4 @@ $(document).ready(function() {
 
   });
 
-  $("tr td").click(function(){
-    var number = $(this).children(":first-child").textContent;
-    console.log($(this));
-    alert(number);
-
-    var chosenFlight = new Flight(number);
-
-    $("span#flightNumber").text(chosenFlight);
-
-  });
 });
