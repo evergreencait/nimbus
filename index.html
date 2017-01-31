@@ -1,31 +1,62 @@
-# _Nimbus Travel Site_
-
-#### _Final Group Project, Epicodus, 01.30.17_
-
-#### By _**Caitlin Hines, Elise St Hilaire, Katy Daviscourt, Matt Caswell**_
-
-## Description
-
-_This web site allows you to choose a departure location and destination, choose flight date, and get a confirmation of travel details. Locations are mythical._
-
-## Specifications
-
-* _Program will let user select to/from destination_
-* _Program will output flight options_
-* _Program will display form for personal information when flight is selected_
-* _Program will display confirmation of flight with personal info after form is submitted._
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" media="screen" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Air Nimbus</title>
+  </head>
 
 
-## Support and contact details
 
-_Feel free to contact us with questions/concerns._
 
-## Technologies Used
 
-_HTML, CSS, Bootstrap, Javascript, jQuery_
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <label for="number-of-travelers">Number of Travelers:</label>
+          <select class="form-control" id="traveler-number">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <label for="depart-location">Departure Location:</label>
+          <select class="form-control" id="depart-location">
+            <option>Seattle</option>
+            <option>Los Angeles</option>
+            <option>San Francisco</option>
+            <option>Reno</option>
+            <option>Austin</option>
+            <option>Chicago</option>
+            <option>New York</option>
+            <option>Miami</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <label for="depart-location">Destination:</label>
+          <select class="form-control" id="depart-location">
+            <option>Narnia</option>
+            <option>Hogwarts</option>
+            <option>Oz</option>
+            <option>Hobbiton</option>
+            <option>The Upside-Down</option>
+            <option>King's Landing</option>
+            <option>Back to the Future</option>
+            <option>Jurassic Park</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
-### License
-
-*MIT*
-
-Copyright (c) 2017 **_Caitlin Hines, Elise St Hilaire, Katy Daviscourt, Matt Caswell_**
+  </body>
+  </html>
