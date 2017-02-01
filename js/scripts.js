@@ -89,9 +89,9 @@ $(document).ready(function() {
         var landingTime = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
         console.log(landingTime);
         var chosenFlight = new Flight(number, departureTime);
-        $("span#flightNumber").text(chosenFlight.number);
-        $("span#departTime").text(departureTime);
-        $("span#landTime").text(landingTime);
+        $("span#flightNumber1").text(chosenFlight.number);
+        $("span#departTime1").text(departureTime);
+        $("span#landTime1").text(landingTime);
       });
 
   });
@@ -110,11 +110,15 @@ $(document).ready(function() {
     var inputtedClass = $("#travelClass").val();
     var generatedSeat = randomSeat();
     var generatedGate = randomGate();
+    var secondGeneratedSeat = randomSeat();
+    var secondGeneratedGate = randomGate();
 
     $("span.travelClass").text(inputtedClass);
     $("span.email").text(inputtedEmail);
-    $("span#seatNumber").text(generatedSeat);
-    $("span#gateNumber").text(generatedGate);
+    $("span#seatNumber1").text(generatedSeat);
+    $("span#gateNumber1").text(generatedGate);
+    $("span#seatNumber2").text(secondGeneratedSeat);
+    $("span#gateNumber2").text(secondGeneratedGate);
 
   });
 
