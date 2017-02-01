@@ -140,6 +140,7 @@ $(document).ready(function() {
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
         $(".flightChoose2").show();
+        $(".flightChoose").hide();
 
 
         $("tr.returnFlightRow").click(function() {
@@ -153,6 +154,7 @@ $(document).ready(function() {
           $("span#landTime2").text(landingTime2);
 
           $(".passForm").show();
+          $(".flightChoose2").hide();
         });
       };
     });
@@ -184,6 +186,7 @@ $(document).ready(function() {
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
     $(".fullTicket").show();
+    $(".passForm").hide();
 
   });
 
