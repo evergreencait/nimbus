@@ -15,6 +15,7 @@ h5  {
 
 h6 {
   font-size: 18px;
+  color: white;
 }
 
 h2 {
@@ -86,6 +87,22 @@ body {
 
 /************* Confirmation Page *************/
 
+.passForm {
+  display: none;
+}
+
+.flightChoose {
+  display: none;
+}
+
+.flightChoose2 {
+  display: none;
+}
+
+.fullTicket {
+  display: none;
+}
+
 .details {
   padding: 20px;
   padding-left: 25px;
@@ -134,23 +151,7 @@ body {
 
 }
 
-/*.sidebarcol {
-  background-image: url("../img/sidebar.jpg");
-}*/
-
 
 .book {
   margin-top: 20px;
 }
-
-/*font-family: 'Raleway', sans-serif; :)
-font-family: 'PT Sans Narrow', sans-serif;
-font-family: 'Quicksand', sans-serif;
-font-family: 'Pacifico', cursive;
-font-family: 'Cinzel', serif;
-font-family: 'Bad Script', cursive;
-font-family: 'Kameron', serif;
-font-family: 'Cabin Sketch', cursive;
-font-family: 'Homemade Apple', cursive;
-font-family: 'Playball', cursive;
-font-family: 'Pattaya', sans-serif;*/

@@ -121,6 +121,7 @@ $(document).ready(function() {
       $("span.destination2").text(selectedDepartureLocation);
       $("span.date1").text(selectedDateDeparture);
       $("span.date2").text(selectedDateArrival);
+      $(".flightChoose").show();
 
 
       $("tr.departFlightRow").click(function() {
@@ -134,6 +135,7 @@ $(document).ready(function() {
         $("span#flightNumber1").text(number1);
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
+        $(".flightChoose2").show();
 
         $("tr.returnFlightRow").click(function() {
           var number2 = $(this).children(":nth-child(2)").text();
@@ -143,6 +145,7 @@ $(document).ready(function() {
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
+          $(".passForm").show();
       });
     });
   });
@@ -171,6 +174,7 @@ $(document).ready(function() {
     $("span#gateNumber1").text(generatedGate);
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
+    $(".fullTicket").show();
 
   });
 
