@@ -119,7 +119,7 @@ $(document).ready(function() {
         var departureTime = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
         var landingTime = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
         var chosenFlight = new Flight(number1, departureTime);
-        $("span#flightNumber1").text(chosenFlight.number1);
+        $("span#flightNumber1").text(number1);
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
 
@@ -128,7 +128,7 @@ $(document).ready(function() {
           var departureTime2 = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
           var landingTime2 = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
           var chosenFlight2 = new Flight(number2, departureTime2);
-          $("span#flightNumber2").text(chosenFlight2.number2);
+          $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
       });
