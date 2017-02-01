@@ -1,4 +1,6 @@
 //back-end logic
+
+//function to create constructor for all the flights we're going to create
 function Flight(number, departureLocation, departureTime, destinationLocation, destinationTime, price) {
   this.number = number,
   this.departureLocation = departureLocation,
@@ -7,18 +9,19 @@ function Flight(number, departureLocation, departureTime, destinationLocation, d
   this.destinationTime = destinationTime,
   this.price = price
 }
-var flight123 = new Flight(123, "Seattle", "5:30a", "Narnia", "7:40p", 890);
 
+//empty string and arrays to be used within declared functions
 var matchingFlightText = "";
 var returningFlights = [];
 var departingFlights = [];
 var departureArray = ["Seattle", "Los Angeles", "San Francisco", "Reno", "Austin", "Chicago", "New York", "Miami"];
 var destinationArray = ["Narnia", "Hogwarts", "Oz", "Hobbiton", "The Upside-Down", "King's Landing", "Jurassic Park", "Back to the Future"];
 
-//generates departing flight info
+//generates departing flights
 var createDepartingFlights = function() {
   departureArray.forEach(function(individualDepartureLocation) {
     destinationArray.forEach(function(individualDestinationLocation) {
+      //creating variables to use as arguments in the flight instance
       var flightNumber = Math.floor(Math.random() * (900)) + 100;
       var departureTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 AM";
       var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
@@ -32,11 +35,10 @@ var createDepartingFlights = function() {
       } else if (flightNumber > 500) {
         price -= 121;
       }
-
+      //create new instance of flight
       var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime, price);
-
+      //push new instance of flight to the departing flights array
       departingFlights.push(newFlight);
-
     });
   });
 }
@@ -45,15 +47,14 @@ var createDepartingFlights = function() {
 var createReturnFlights = function() {
   destinationArray.forEach(function(individualDestinationLocation) {
     departureArray.forEach(function(individualDepartureLocation) {
+      //creating variables to use as arguments in the flight instance
       var flightNumber = Math.floor(Math.random() * (900)) + 100;
       var departureTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 AM";
       var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
-
-
+      //create new Flight object
       var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime);
-
+      //push new Flight object to returning flights array
       returningFlights.push(newFlight);
-
     });
   });
 }
@@ -63,7 +64,10 @@ var createReturnFlights = function() {
 //search for generated departing flights that match the user's search
 var departingFlightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
     departingFlights.forEach(function(flight) {
+      //compares user's departure and destination location to the element we're looking in array
       if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+
+  //adds text to the table if user's search matches
         matchingFlightText += "<tr class='departFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + "<span class='departureTime'>" + flight.departureTime + "</span>"+ " - " + flight.destinationLocation + " " +  "<span class='arrivalTime'>" + flight.destinationTime + "</span>"+ "</td><td>$" + flight.price + "</tr>";
       }
     });
@@ -71,39 +75,44 @@ var departingFlightSearch = function(selectedDepartureLocation, selectedDestinat
 
 //search for generated departing flights that match the user's search
 var returningFlightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
+    //compares user's departure and destination location to the element we're looking in array
     returningFlights.forEach(function(flight) {
       if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+
+        //adds text to the table if user's search matches
         matchingFlightText += "<tr class='returnFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.destinationLocation + " " + "<span class='departureTime'>" + flight.destinationTime + "</span>"+ " - " + flight.departureLocation + " " +  "<span class='arrivalTime'>" + flight.departureTime + "</span></td><td></tr>";
       }
     });
 }
-
+//generates random number for users seat
 function randomSeat () {
   return parseInt(Math.floor(Math.random() * 36 ) + 1);
 }
-
+//generates random number for users flight gate
 function randomGate () {
   return parseInt(Math.floor(Math.random() * 18 ) + 1);
 }
 
-
-
-
 //front-end logic
 $(document).ready(function() {
+  //generates flights for user
   createDepartingFlights();
   createReturnFlights();
+  // beginning of when we submit form
   $("form#flight-search").submit(function(event) {
     event.preventDefault();
     matchingFlightText = "";
     $(".departing-flight-options tr").slice(1).remove();
+    // collects user input for searching through list of flights
     var selectedDepartureLocation = $("#depart-location").val();
     var selectedDestinationLocation = $("#destination-location").val();
     var selectedDateDeparture = $("input.departureDate").val();
     var selectedDateArrival = $("input.returnDate").val();
 
+    //search for generated departing flights that match the user's search
     departingFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
 
+    // displaying search results
     $(".departing-flight-options").append(matchingFlightText);
 
       $("span.departure").text(selectedDepartureLocation);
@@ -112,6 +121,7 @@ $(document).ready(function() {
       $("span.destination2").text(selectedDepartureLocation);
       $("span.date1").text(selectedDateDeparture);
       $("span.date2").text(selectedDateArrival);
+
 
       $("tr.departFlightRow").click(function() {
         matchingFlightText = "";
@@ -134,13 +144,10 @@ $(document).ready(function() {
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
       });
-
-
-      });
-
-
+    });
   });
 
+//user submits personal info for flight
   $("form#new-passenger").submit(function(event) {
     event.preventDefault();
     var inputs = ["lastName", "firstName"];
