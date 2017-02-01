@@ -173,6 +173,7 @@ $(document).ready(function() {
   //user submits personal info for flight
   $("form#new-passenger").submit(function(event) {
     event.preventDefault();
+    $("body").toggleClass("departBG")
     var inputs = ["lastName", "firstName"];
 
     inputs.forEach(function(input) {

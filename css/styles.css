@@ -98,6 +98,10 @@ body {
   color: darkblue;
 }
 
+.departBG {
+  background-image: url("../img/cloud2.jpeg");
+}
+
 
 
 /************* Confirmation Page *************/
