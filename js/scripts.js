@@ -123,6 +123,7 @@ $(document).ready(function() {
       $("span.date1").text(selectedDateDeparture);
       $("span.date2").text(selectedDateArrival);
       $(".flightChoose").show();
+      $(".flightSelection").hide();
 
 
     $("tr.departFlightRow").click(function() {
