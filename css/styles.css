@@ -24,6 +24,10 @@ h2 {
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-image: url("../img/cloud3.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /************* Nav Bar *************/
@@ -41,9 +45,22 @@ body {
   color: black;
 }
 
+.titleSmall {
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+}
 
-.navbar-right {
+#homeIcon {
+  height: 40px;
+}
+
+#bolt {
+  height: 30px;
+}
+
+.homey {
   padding-right: 40px;
+  padding-top: -10px;
 }
 
 .navbar-brand {
