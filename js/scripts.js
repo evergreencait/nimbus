@@ -154,7 +154,9 @@ $(document).ready(function() {
 
           $(".passForm").show();
         });
-      };
+      } else {
+        $(".passForm").show();
+      }
     });
   });
 
