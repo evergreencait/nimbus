@@ -68,7 +68,10 @@ body {
   font-size: 60px;
   padding-top: 4rem;
   padding-bottom: 6rem;
+}
 
+#add-passenger {
+  margin-top: 20px;
 }
 
 
