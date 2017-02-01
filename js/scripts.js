@@ -108,6 +108,8 @@ $(document).ready(function() {
 
       $("span.departure").text(selectedDepartureLocation);
       $("span.destination").text(selectedDestinationLocation);
+      $("span.departure2").text(selectedDestinationLocation);
+      $("span.destination2").text(selectedDepartureLocation);
       $("span.date1").text(selectedDateDeparture);
       $("span.date2").text(selectedDateArrival);
 
