@@ -115,12 +115,14 @@ $(document).ready(function() {
     // displaying search results
     $(".departing-flight-options").append(matchingFlightText);
 
-    $("span.departure").text(selectedDepartureLocation);
-    $("span.destination").text(selectedDestinationLocation);
-    $("span.departure2").text(selectedDestinationLocation);
-    $("span.destination2").text(selectedDepartureLocation);
-    $("span.date1").text(selectedDateDeparture);
-    $("span.date2").text(selectedDateArrival);
+
+      $("span.departure").text(selectedDepartureLocation);
+      $("span.destination").text(selectedDestinationLocation);
+      $("span.departure2").text(selectedDestinationLocation);
+      $("span.destination2").text(selectedDepartureLocation);
+      $("span.date1").text(selectedDateDeparture);
+      $("span.date2").text(selectedDateArrival);
+      $(".flightChoose").show();
 
 
     $("tr.departFlightRow").click(function() {
@@ -137,6 +139,7 @@ $(document).ready(function() {
         $("span#flightNumber1").text(number1);
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
+        $(".flightChoose2").show();
 
 
         $("tr.returnFlightRow").click(function() {
@@ -148,12 +151,13 @@ $(document).ready(function() {
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
+
+          $(".passForm").show();
         });
-        }
-
-
+      };
     });
   });
+
 
   //user submits personal info for flight
   $("form#new-passenger").submit(function(event) {
@@ -179,6 +183,7 @@ $(document).ready(function() {
     $("span#gateNumber1").text(generatedGate);
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
+    $(".fullTicket").show();
 
   });
 

@@ -89,22 +89,25 @@
           </div>
           <button type="submit" class="btn btn-info">Check flights</button>
         </form>
-        
+
         <!--Departing Flight Options Table-->
-        <h2>Choose your departing flight</h2>
-        <div class="panel panel-default">
-          <table class="table departing-flight-options">
-            <tr class="top-row">
-              <td>Flight</td>
-              <td>Number</td>
-              <td>Departure - Arrival</td>
-              <td>Ticket Price</td>
-            </tr>
-          </table>
+        <div class="flightChoose">
+          <h2>Choose your departing flight</h2>
+          <div class="panel panel-default">
+            <table class="table departing-flight-options">
+              <tr class="top-row">
+                <td>Flight</td>
+                <td>Number</td>
+                <td>Departure - Arrival</td>
+                <td>Ticket Price</td>
+              </tr>
+            </table>
+          </div>
         </div>
         <!--End Departing Flight Options Table-->
 
         <!--Return Flight Options Table-->
+        <div class = "flightChoose2"
         <h2>Choose your returning flight</h2>
         <div class="panel panel-default">
           <table class="table return-flight-options">
@@ -116,11 +119,13 @@
             </tr>
           </table>
         </div>
-        <!--Return End Flight Options Table-->
+      </div>
+      <!--Return End Flight Options Table-->
 
 
-        <div>
-          <!--used to be container -->
+      <div>
+        <!--used to be container -->
+        <div class="passForm">
           <h2>Enter your information</h2>
           <form id="new-passenger">
             <div class="form-group">
@@ -154,9 +159,11 @@
             <button type="submit" class="btn btn-info book">Book your flight!</button>
           </form>
         </div>
+      </div>
 
-        <div>
-          <!--used to be container -->
+      <div>
+        <!--used to be container -->
+        <div class="fullTicket">
           <div class="row ticket">
             <div class="col-md-7 details">
               <h4><span class="lastName"></span>, <span class="firstName"></span>           </h4>
@@ -175,30 +182,31 @@
             <img class = "sidebar1" src="img/sidebar.jpg" alt="image of sideways barcode" />
           </div> -->
         </div>
+
+
+        <!-- second ticket -->
+        <div>
+          <!--used to be container -->
+          <div class="row">
+            <div class="col-md-7 details">
+              <h4><span class="lastName"></span>, <span class="firstName"></span>           </h4>
+              <h6><span class="travelClass"></span></h6>
+              <h4><span class="departure2"></span> <img class="plane" src="img/plane.png" alt="plane icon" /> <span class="destination2"></span></h4>
+              <h4 class = "barcodeline">Seat: <span id="seatNumber2"></span>   Gate: <span id="gateNumber2"></span>  <img id = "mainbar2" src="img/barcode.jpg" alt="an image of a barcode" /></h4>
+            </div>
+            <div class="col-md-5 flight">
+              <h3>Departure time: <strong><span id="departTime2"></span></strong></h3>
+              <h3>Arrival time: <strong><span id="landTime2"></span></strong></h3>
+              <h3>Depart: <span class="date2"></span></h3>
+              <h5>Flight #<span id="flightNumber2"></span></h5>
+            </div>
+
+            <!-- <div class="col-md-2 sidebarcol">
+          </div> -->
+        </div>
+
+        <h6>Your confirmation will be emailed to you at <span class="email"></span>.</h6>
       </div>
-
-      <!-- second ticket -->
-      <div>
-        <!--used to be container -->
-        <div class="row">
-          <div class="col-md-7 details">
-            <h4><span class="lastName"></span>, <span class="firstName"></span>           </h4>
-            <h6><span class="travelClass"></span></h6>
-            <h4><span class="departure2"></span> <img class="plane" src="img/plane.png" alt="plane icon" /> <span class="destination2"></span></h4>
-            <h4 class = "barcodeline">Seat: <span id="seatNumber2"></span>   Gate: <span id="gateNumber2"></span>  <img id = "mainbar2" src="img/barcode.jpg" alt="an image of a barcode" /></h4>
-          </div>
-          <div class="col-md-5 flight">
-            <h3>Departure time: <strong><span id="departTime2"></span></strong></h3>
-            <h3>Arrival time: <strong><span id="landTime2"></span></strong></h3>
-            <h3>Depart: <span class="date2"></span></h3>
-            <h5>Flight #<span id="flightNumber2"></span></h5>
-          </div>
-
-          <!-- <div class="col-md-2 sidebarcol">
-        </div> -->
-      </div>
-
-      <h6>Your confirmation will be emailed to you at <span class="email"></span>.</h6>
     </div>
   </div>
 
