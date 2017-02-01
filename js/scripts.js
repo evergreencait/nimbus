@@ -163,7 +163,9 @@ $(document).ready(function() {
           $(".passForm").show();
           $(".flightChoose2").hide();
         });
-      };
+      } else {
+        $(".passForm").show();
+      }
     });
   });
 

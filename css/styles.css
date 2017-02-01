@@ -87,6 +87,18 @@ body {
   margin-top: 16px;
 }
 
+.departFlightRow, .returnFlightRow {
+  color: darkblue;
+  cursor: pointer;
+}
+
+.departFlightRow:hover, .returnFlightRow:hover {
+  text-decoration: underline;
+
+  color: darkblue;
+}
+
+
 
 /************* Confirmation Page *************/
 
