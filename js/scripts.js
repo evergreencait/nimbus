@@ -50,7 +50,7 @@ var createReturnFlights = function() {
       var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
 
 
-      var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime, price);
+      var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime);
 
       returningFlights.push(newFlight);
 
@@ -60,13 +60,21 @@ var createReturnFlights = function() {
 
 
 
-
-var flightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
+//search for generated departing flights that match the user's search
+var departingFlightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
     departingFlights.forEach(function(flight) {
       if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
         matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + "<span class='departureTime'>" + flight.departureTime + "</span>"+ " - " + flight.destinationLocation + " " +  "<span class='arrivalTime'>" + flight.destinationTime + "</span>"+ "</td><td>$" + flight.price + "</tr>";
       }
+    });
+}
 
+//search for generated departing flights that match the user's search
+var returningFlightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
+    returningFlights.forEach(function(flight) {
+      if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+        matchingFlightText += "<tr><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.destinationLocation + " " + "<span class='departureTime'>" + flight.destinationTime + "</span>"+ " - " + flight.departureLocation + " " +  "<span class='arrivalTime'>" + flight.departureTime + "</span></td><td></tr>";
+      }
     });
 }
 
@@ -84,30 +92,32 @@ function randomGate () {
 //front-end logic
 $(document).ready(function() {
   createDepartingFlights();
+  createReturnFlights();
   $("form#flight-search").submit(function(event) {
     event.preventDefault();
     matchingFlightText = "";
-    $(".flight-options tr").slice(1).remove();
-
+    $(".departing-flight-options tr").slice(1).remove();
     var selectedDepartureLocation = $("#depart-location").val();
     var selectedDestinationLocation = $("#destination-location").val();
     var selectedDateDeparture = $("input.departureDate").val();
     var selectedDateArrival = $("input.returnDate").val();
 
-    flightSearch(selectedDepartureLocation, selectedDestinationLocation);
+    departingFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
 
-    $(".flight-options").append(matchingFlightText);
+    $(".departing-flight-options").append(matchingFlightText);
 
       $("span.departure").text(selectedDepartureLocation);
       $("span.destination").text(selectedDestinationLocation);
       $("span.date1").text(selectedDateDeparture);
       $("span.date2").text(selectedDateArrival);
 
-      $("tr").click(function(){
+      $("tr").click(function() {
+        matchingFlightText = "";
+        returningFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
+        $(".return-flight-options").append(matchingFlightText);
         var number = $(this).children(":nth-child(2)").text();
         var departureTime = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
         var landingTime = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
-        console.log(landingTime);
         var chosenFlight = new Flight(number, departureTime);
         $("span#flightNumber").text(chosenFlight.number);
         $("span#departTime").text(departureTime);
