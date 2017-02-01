@@ -63,26 +63,26 @@ var createReturnFlights = function() {
 
 //search for generated departing flights that match the user's search
 var departingFlightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
-    departingFlights.forEach(function(flight) {
-      //compares user's departure and destination location to the element we're looking in array
-      if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+  departingFlights.forEach(function(flight) {
+    //compares user's departure and destination location to the element we're looking in array
+    if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
 
-  //adds text to the table if user's search matches
-        matchingFlightText += "<tr class='departFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + "<span class='departureTime'>" + flight.departureTime + "</span>"+ " - " + flight.destinationLocation + " " +  "<span class='arrivalTime'>" + flight.destinationTime + "</span>"+ "</td><td>$" + flight.price + "</tr>";
-      }
-    });
+      //adds text to the table if user's search matches
+      matchingFlightText += "<tr class='departFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.departureLocation + " " + "<span class='departureTime'>" + flight.departureTime + "</span>"+ " - " + flight.destinationLocation + " " +  "<span class='arrivalTime'>" + flight.destinationTime + "</span>"+ "</td><td>$" + flight.price + "</tr>";
+    }
+  });
 }
 
 //search for generated departing flights that match the user's search
 var returningFlightSearch = function(selectedDepartureLocation, selectedDestinationLocation) {
-    //compares user's departure and destination location to the element we're looking in array
-    returningFlights.forEach(function(flight) {
-      if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
+  //compares user's departure and destination location to the element we're looking in array
+  returningFlights.forEach(function(flight) {
+    if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
 
-        //adds text to the table if user's search matches
-        matchingFlightText += "<tr class='returnFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.destinationLocation + " " + "<span class='departureTime'>" + flight.destinationTime + "</span>"+ " - " + flight.departureLocation + " " +  "<span class='arrivalTime'>" + flight.departureTime + "</span></td><td></tr>";
-      }
-    });
+      //adds text to the table if user's search matches
+      matchingFlightText += "<tr class='returnFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.destinationLocation + " " + "<span class='departureTime'>" + flight.destinationTime + "</span>"+ " - " + flight.departureLocation + " " +  "<span class='arrivalTime'>" + flight.departureTime + "</span></td><td></tr>";
+    }
+  });
 }
 //generates random number for users seat
 function randomSeat () {
@@ -115,16 +115,19 @@ $(document).ready(function() {
     // displaying search results
     $(".departing-flight-options").append(matchingFlightText);
 
-      $("span.departure").text(selectedDepartureLocation);
-      $("span.destination").text(selectedDestinationLocation);
-      $("span.departure2").text(selectedDestinationLocation);
-      $("span.destination2").text(selectedDepartureLocation);
-      $("span.date1").text(selectedDateDeparture);
-      $("span.date2").text(selectedDateArrival);
+    $("span.departure").text(selectedDepartureLocation);
+    $("span.destination").text(selectedDestinationLocation);
+    $("span.departure2").text(selectedDestinationLocation);
+    $("span.destination2").text(selectedDepartureLocation);
+    $("span.date1").text(selectedDateDeparture);
+    $("span.date2").text(selectedDateArrival);
 
 
-      $("tr.departFlightRow").click(function() {
-        matchingFlightText = "";
+    $("tr.departFlightRow").click(function() {
+      matchingFlightText = "";
+      var flightType = $("input:radio[name=trip]:checked").val();
+      if (flightType === "roundTrip") {
+
         returningFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
         $(".return-flight-options").append(matchingFlightText);
         var number1 = $(this).children(":nth-child(2)").text();
@@ -135,6 +138,7 @@ $(document).ready(function() {
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
 
+
         $("tr.returnFlightRow").click(function() {
           matchingFlightText = "";
           var number2 = $(this).children(":nth-child(2)").text();
@@ -144,11 +148,14 @@ $(document).ready(function() {
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
-      });
+        });
+        }
+
+
     });
   });
 
-//user submits personal info for flight
+  //user submits personal info for flight
   $("form#new-passenger").submit(function(event) {
     event.preventDefault();
     var inputs = ["lastName", "firstName"];
