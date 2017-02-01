@@ -108,6 +108,7 @@ $(document).ready(function() {
     var selectedDestinationLocation = $("#destination-location").val();
     var selectedDateDeparture = $("input.departureDate").val();
     var selectedDateArrival = $("input.returnDate").val();
+    var selectedNumberOfTravelers = $("#traveler-number").val();
 
     //search for generated departing flights that match the user's search
     departingFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
@@ -153,7 +154,12 @@ $(document).ready(function() {
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
-
+          if (selectedNumberOfTravelers === "1") {
+            $("#passenger1").hide();
+            $("#passenger2").hide();
+          } else if (selectedNumberOfTravelers === "2") {
+            $("#passenger2").hide();
+          }
           $(".passForm").show();
           $(".flightChoose2").hide();
         });

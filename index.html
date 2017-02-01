@@ -17,99 +17,94 @@
     </div>
     <div class="container">
       <div class = "flightSelection">
-      <h2>There's no knowing where you might be swept off to...</h2>
-      <form id="flight-search">
-        <div class="row">
-          <div class="col-xs-2">
-            <label for="number-of-travelers">Travelers:</label>
-            <select class="form-control" id="traveler-number">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-            </select>
+        <h2>There's no knowing where you might be swept off to...</h2>
+        <form id="flight-search">
+          <div class="row">
+            <div class="col-xs-2">
+              <label for="number-of-travelers">Travelers:</label>
+              <select class="form-control" id="traveler-number">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="col-xs-5">
+              <label for="depart-location">Departure Location:</label>
+              <select class="form-control" id="depart-location">
+                <option>Seattle</option>
+                <option>Los Angeles</option>
+                <option>San Francisco</option>
+                <option>Reno</option>
+                <option>Austin</option>
+                <option>Chicago</option>
+                <option>New York</option>
+                <option>Miami</option>
+              </select>
+            </div>
+            <div class="col-xs-5">
+              <label for="destination-location">Destination:</label>
+              <select class="form-control" id="destination-location">
+                <option>Narnia</option>
+                <option>Hogwarts</option>
+                <option>Oz</option>
+                <option>Hobbiton</option>
+                <option>The Upside-Down</option>
+                <option>King's Landing</option>
+                <option>Back to the Future</option>
+                <option>Jurassic Park</option>
+              </select>
+            </div>
           </div>
-          <div class="col-xs-5">
-            <label for="depart-location">Departure Location:</label>
-            <select class="form-control" id="depart-location">
-              <option>Seattle</option>
-              <option>Los Angeles</option>
-              <option>San Francisco</option>
-              <option>Reno</option>
-              <option>Austin</option>
-              <option>Chicago</option>
-              <option>New York</option>
-              <option>Miami</option>
-            </select>
-          </div>
-          <div class="col-xs-5">
-            <label for="destination-location">Destination:</label>
-            <select class="form-control" id="destination-location">
-              <option>Narnia</option>
-              <option>Hogwarts</option>
-              <option>Oz</option>
-              <option>Hobbiton</option>
-              <option>The Upside-Down</option>
-              <option>King's Landing</option>
-              <option>Back to the Future</option>
-              <option>Jurassic Park</option>
-            </select>
-          </div>
+          <div class="row days">
+            <div class="col-xs-4">
+              <div class="form-group">
+                <label for="departure">Departure Date:</label>
+                <input class="departureDate" class="form-control" type="date">
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="form-group">
+                <label for="return">Return Date:</label>
+                <input class="returnDate" class="form-control" type="date">
+              </div>
+            </div>
+            <div class="col-xs-4 way">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="trip" value="oneWay">
+                  One-way
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="trip" value="roundTrip">
+                  Round-trip
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-info">Check flights</button>
+          </form>
         </div>
-        <div class="row days">
-          <div class="col-xs-4">
-            <div class="form-group">
-              <label for="departure">Departure Date:</label>
-              <input class="departureDate" class="form-control" type="date">
-            </div>
-          </div>
-          <div class="col-xs-4">
-            <div class="form-group">
-              <label for="return">Return Date:</label>
-              <input class="returnDate" class="form-control" type="date">
-            </div>
-          </div>
-          <div class="col-xs-4 way">
-            <div class="radio">
-              <label>
-                <input type="radio" name="trip" value="oneWay">
-                One-way
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="trip" value="roundTrip">
-                Round-trip
-              </label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-info">Check flights</button>
-        </form>
       </div>
-    </div>
 
-        <!--Departing Flight Options Table-->
-        <div class="flightChoose">
-          <h2>Choose your departing flight</h2>
-          <div class="panel panel-default">
-            <table class="table departing-flight-options">
-              <tr class="top-row">
-                <td>Flight</td>
-                <td>Number</td>
-                <td>Departure - Arrival</td>
-                <td>Ticket Price</td>
-              </tr>
-            </table>
-          </div>
+      <!--Departing Flight Options Table-->
+      <div class="flightChoose">
+        <h2>Choose your departing flight</h2>
+        <div class="panel panel-default">
+          <table class="table departing-flight-options">
+            <tr class="top-row">
+              <td>Flight</td>
+              <td>Number</td>
+              <td>Departure - Arrival</td>
+              <td>Ticket Price</td>
+            </tr>
+          </table>
         </div>
-        <!--End Departing Flight Options Table-->
+      </div>
+      <!--End Departing Flight Options Table-->
 
-        <!--Return Flight Options Table-->
-        <div class = "flightChoose2">
+      <!--Return Flight Options Table-->
+      <div class = "flightChoose2">
         <h2>Choose your returning flight</h2>
         <div class="panel panel-default">
           <table class="table return-flight-options">
@@ -130,35 +125,60 @@
         <div class="passForm">
           <h2>Enter your information</h2>
           <form id="new-passenger">
-            <div class="form-group">
-              <label for="new-first-name">First name</label>
-              <input type="text" class="form-control" id="firstName">
-            </div>
-            <div class="form-group">
-              <label for="new-last-name">Last name</label>
-              <input type="text" class="form-control" id="lastName">
-            </div>
+              <div class="form-group">
+                <label for="new-first-name">First name</label>
+                <input type="text" class="form-control" id="firstName">
+              </div>
+              <div class="form-group">
+                <label for="new-last-name">Last name</label>
+                <input type="text" class="form-control" id="lastName">
+              </div>
 
-            <div id="new-emails">
-              <div class="new-email">
-                <div class="form-group">
-                  <label for="new-email">Email Address:</label>
-                  <input type="text" class="form-control" id="email">
+              <div id="new-emails">
+                <div class="new-email">
+                  <div class="form-group">
+                    <label for="new-email">Email Address:</label>
+                    <input type="text" class="form-control" id="email">
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="class-choice">
-              <label>Travel class</label>
-              <select class="form-control" id="travelClass">
-                <option></option>
-                <option>Port-key</option>
-                <option>First class</option>
-                <option>Business class</option>
-                <option>Coach</option>
-              </select>
-            </div>
-             <span class="btn btn-primary" id="add-passenger">Add another passenger</span>
+              <div class="class-choice">
+                <label>Travel class (applies to all travelers)</label>
+                <select class="form-control" id="travelClass">
+                  <option></option>
+                  <option>Port-key</option>
+                  <option>First class</option>
+                  <option>Business class</option>
+                  <option>Coach</option>
+                </select>
+              </div>
+
+              <div id="passenger1">
+                <h2>Enter information for Passenger 1</h2>
+                <div class="form-group">
+                  <label for="new-first-name1">First name</label>
+                  <input type="text" class="form-control" id="firstName1">
+                </div>
+                <div class="form-group">
+                  <label for="new-last-name1">Last name</label>
+                  <input type="text" class="form-control" id="lastName1">
+                </div>
+              </div>
+
+              <div id="passenger2">
+                <h2>Enter information for Passenger 2</h2>
+                <div class="form-group">
+                  <label for="new-first-name2">First name</label>
+                  <input type="text" class="form-control" id="firstName2">
+                </div>
+                <div class="form-group">
+                  <label for="new-last-name2">Last name</label>
+                  <input type="text" class="form-control" id="lastName2">
+                </div>
+              </div>
+
+
             <button type="submit" class="btn btn-info book">Submit</button>
           </form>
         </div>
