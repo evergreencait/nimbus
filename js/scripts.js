@@ -9,10 +9,10 @@ function Flight(number, departureLocation, departureTime, destinationLocation, d
 }
 var flight123 = new Flight(123, "Seattle", "5:30a", "Narnia", "7:40p", 890);
 
+var matchingFlightText = "";
 var flights = [flight123];
 var departureArray = ["Seattle", "Los Angeles", "San Francisco", "Reno", "Austin", "Chicago", "New York", "Miami"];
 var destinationArray = ["Narnia", "Hogwarts", "Oz", "Hobbiton", "The Upside-Down", "King's Landing", "Jurassic Park", "Back to the Future"];
-var matchingFlightText = "";
 
 
 var createFlights = function() {
@@ -66,6 +66,8 @@ $(document).ready(function() {
   createFlights();
   $("form#flight-search").submit(function(event) {
     event.preventDefault();
+    matchingFlightText = "";
+    $(".flight-options tr").slice(1).remove();
 
     var selectedDepartureLocation = $("#depart-location").val();
     var selectedDestinationLocation = $("#destination-location").val();
