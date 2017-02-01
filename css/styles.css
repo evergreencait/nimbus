@@ -117,13 +117,21 @@ body {
   margin-top: 12px;
 }
 
+#mainbar2 {
+  height: 70px;
+  width: 350px;
+  padding-left: 30px;
+  margin-top: 12px;
+}
+/*
 #sidebar1 {
   width: 50%;
   height: 300px;
   margin-top: 40px;
   padding-left: 0px;
   float: right;
-}
+}*/
+
 
 
 .book {
