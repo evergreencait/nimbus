@@ -136,6 +136,7 @@ $(document).ready(function() {
         $("span#landTime1").text(landingTime);
 
         $("tr.returnFlightRow").click(function() {
+          matchingFlightText = "";
           var number2 = $(this).children(":nth-child(2)").text();
           var departureTime2 = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
           var landingTime2 = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
