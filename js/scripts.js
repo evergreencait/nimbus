@@ -138,6 +138,7 @@ $(document).ready(function() {
       var flightType = $("input:radio[name=trip]:checked").val();
       if (flightType === "roundTrip") {
         returningFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
+
         //append chosen return flight to tickets
         $(".return-flight-options").append(matchingFlightText);
         var number1 = $(this).children(":nth-child(2)").text();
@@ -147,7 +148,6 @@ $(document).ready(function() {
         $("span#flightNumber1").text(number1);
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
-        // debugger;
         $(".flightChoose").hide();
         $(".flightChoose2").show();
 
@@ -171,13 +171,9 @@ $(document).ready(function() {
           } else if (selectedNumberOfTravelers === "2") {
             $("#passenger2").hide();
           }
-
         });
-      } else {
 
-        //  else {
-        //   $(".passForm").show();
-        // }
+      } else {
 
         $(".flightChoose").hide();
         $(".passForm").show();
@@ -197,12 +193,7 @@ $(document).ready(function() {
   $("form#new-passenger").submit(function(event) {
     event.preventDefault();
     $("body").toggleClass("departBG")
-    // var inputs = ["lastName", "firstName"];
-    //
-    // inputs.forEach(function(input) {
-    //   var userInput = $("input#" + input).val();
-    //   var inputUpper = userInput.toUpperCase();
-    //   $("span." + input).text(inputUpper);
+
     var inputtedEmail = $("#email").val();
     var inputtedClass = $("#travelClass").val();
     var generatedSeat = randomSeat();
@@ -220,42 +211,22 @@ $(document).ready(function() {
       passengerArray.push(newPassenger);
     }
 
-
-
-    // });
-
-
     $("span.travelClass").text(inputtedClass);
     $("span.email").text(inputtedEmail);
     $("span#seatNumber1").text(generatedSeat);
     $("span#gateNumber1").text(generatedGate);
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
-    // refactor later into loop!
 
+// append passenger info to ticket
     passengerArray.forEach(function(passenger) {
       console.log(passengerArray.indexOf(passenger));
       $(".passenger" + passengerArray.indexOf(passenger) + " .lastName").text(passengerArray [passengerArray.indexOf(passenger)].lastName);
       $(".passenger" + passengerArray.indexOf(passenger) + " .firstName").text(passengerArray [passengerArray.indexOf(passenger)].firstName);
       $(".passenger" + passengerArray.indexOf(passenger) + " #seatNumber1").text(generatedSeat + passengerArray.indexOf(passenger));
       $(".passenger" + passengerArray.indexOf(passenger) + " #seatNumber2").text(secondGeneratedSeat + passengerArray.indexOf(passenger));
-
     });
-    // $(".passenger0 .lastName").text(passengerArray[0].lastName);
-    // $(".passenger0 .firstName").text(passengerArray[0].firstName);
-    // $(".passenger0 #seatNumber1").text(generatedSeat);
-    // $(".passenger0 #seatNumber2").text(secondGeneratedSeat);
-    //
-    //
-    // $(".passenger1 .lastName").text(passengerArray[1].lastName);
-    // $(".passenger1 .firstName").text(passengerArray[1].firstName);
-    // $(".passenger1 #seatNumber1").text(generatedSeat + 1);
-    // $(".passenger1 #seatNumber2").text(secondGeneratedSeat +1);
-    //
-    // $(".passenger2 .lastName").text(passengerArray[2].lastName);
-    // $(".passenger2 .firstName").text(passengerArray[2].firstName);
-    // $(".passenger2 #seatNumber1").text(generatedSeat + 2);
-    // $(".passenger2 #seatNumber2").text(secondGeneratedSeat +2);
+
 
     $(".passenger0").show();
     $(".passForm").hide();
@@ -268,7 +239,5 @@ $(document).ready(function() {
       $(".passenger1").show();
       $(".passenger2").show();
     }
-
   });
-
 });

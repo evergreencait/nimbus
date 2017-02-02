@@ -3,8 +3,8 @@
   src: url(fonts/blackjar.ttf);
 }
 
-
 /************* Basic Stylings *************/
+
 p {
   color: white;
 }
@@ -12,6 +12,7 @@ p {
 h1  {
   text-align: center;
 }
+
 h4  {
   font-size: 30px;
 }
@@ -50,11 +51,9 @@ body {
   color: white;
 }
 
-
 .title:hover {
   color: 	#C0C0C0;
 }
-
 
 .titleSmall {
   font-size: 30px;
@@ -79,8 +78,6 @@ body {
   padding-top: 4rem;
   padding-bottom: 6rem;
 }
-
-
 
 /************* Flight Options Table *************/
 
@@ -112,42 +109,17 @@ body {
   margin-top: 20px;
 }
 
-
-
 /************* Confirmation Page *************/
 
 #confirmation {
   color: white;
 }
 
-
-.passForm {
+.passForm, .flightChoose, .flightChoose2, .passenger0, .passenger1, .passenger2 {
   display: none;
 }
 
-.flightChoose {
-  display: none;
-}
-
-.flightChoose2 {
-  display: none;
-}
-
-.passenger0, .passenger1, .passenger2 {
-  display: none;
-}
-
-
-.details {
-  padding: 20px;
-  padding-left: 25px;
-  border: 3px solid black;
-  height: 300px;
-  margin-top: 40px;
-  background-color: white;
-}
-
-.flight {
+.details, .flight{
   padding: 20px;
   padding-left: 25px;
   border: 3px solid black;
@@ -164,34 +136,19 @@ body {
   padding-top: -20px;
 }
 
-
-#mainbar1 {
+.mainbar {
   height: 70px;
   width: 350px;
   padding-left: 30px;
   margin-top: 12px;
 }
-
-#mainbar2 {
-  height: 70px;
-  width: 350px;
-  padding-left: 30px;
-  margin-top: 12px;
-}
-
-.sidebar1 {
-  width: 100%;
-  height: 300px;
-  padding-left: 0px;
-
-}
-
 
 .book {
   margin-top: 20px;
 }
 
 /**************about page***************/
+
 .about-story {
   border: 3px solid black;
   padding-left: 25px;
