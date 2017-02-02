@@ -5,6 +5,9 @@
 
 
 /************* Basic Stylings *************/
+h1  {
+  text-align: center;
+}
 h4  {
   font-size: 30px;
 }
@@ -42,9 +45,11 @@ body {
   color: white;
 }
 
+
 .title:hover {
   color: black;
 }
+
 
 .titleSmall {
   font-size: 30px;
@@ -118,6 +123,7 @@ body {
   display: none;
 }
 
+
 .details {
   padding: 20px;
   padding-left: 25px;
@@ -169,4 +175,30 @@ body {
 
 .book {
   margin-top: 20px;
+}
+
+/**************about page***************/
+.about-story {
+  border: 3px solid black;
+  padding-left: 25px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.about {
+  font-size: 25px;
+  color: white;
+  margin-left: 680px;
+}
+
+.about:hover {
+  color: black;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: black;
 }
