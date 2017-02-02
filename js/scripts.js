@@ -168,11 +168,11 @@ $(document).ready(function() {
             $("#passenger2").hide();
           }
           $(".passForm").show();
-          $(".flightChoose2").hide();
         });
       } else {
         $(".passForm").show();
       }
+      $(".flightChoose2").hide();
     });
   });
 
