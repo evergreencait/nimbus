@@ -79,10 +79,6 @@ body {
   padding-bottom: 6rem;
 }
 
-#add-passenger {
-  margin-top: 20px;
-}
-
 
 
 /************* Flight Options Table *************/
@@ -109,6 +105,10 @@ body {
 
 .departBG {
   background-image: url("../img/cloud2.jpeg");
+}
+
+#add-passenger {
+  margin-top: 20px;
 }
 
 
@@ -201,7 +201,8 @@ body {
 .about {
   font-size: 25px;
   color: white;
-  margin-left: 680px;
+  padding-right: 40px;
+  padding-top: -10px;
 }
 
 .about:hover {
