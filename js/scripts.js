@@ -184,6 +184,7 @@ $(document).ready(function() {
         if (selectedNumberOfTravelers === "1") {
           $("#passenger1").hide();
           $("#passenger2").hide();
+
         } else if (selectedNumberOfTravelers === "2") {
           $("#passenger2").hide();
         }
@@ -230,8 +231,17 @@ $(document).ready(function() {
     $("span#gateNumber1").text(generatedGate);
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
-    $(".fullTicket").show();
+    $(".passenger0").show();
     $(".passForm").hide();
+
+    if (selectedNumberOfTravelers === "2") {
+      $(".passenger1").show();
+
+
+    } else if (selectedNumberOfTravelers === "3") {
+      $(".passenger1").show();
+      $(".passenger2").show();
+    }
 
   });
 

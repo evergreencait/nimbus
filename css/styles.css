@@ -51,7 +51,7 @@ body {
 
 
 .title:hover {
-  color: black;
+  color: 	#C0C0C0;
 }
 
 
@@ -132,7 +132,7 @@ body {
   display: none;
 }
 
-.fullTicket {
+.passenger0, .passenger1, .passenger2 {
   display: none;
 }
 
@@ -206,7 +206,7 @@ body {
 }
 
 .about:hover {
-  color: black;
+  color:#C0C0C0;
 }
 
 .footer {
