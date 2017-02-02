@@ -25,6 +25,7 @@
             <div class="col-xs-2">
               <label for="number-of-travelers">Travelers:</label>
               <select class="form-control" id="traveler-number">
+                <option></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -128,13 +129,14 @@
         <div class="passForm">
           <h2>Enter your information</h2>
           <form id="new-passenger">
+            <div id="passenger0">
               <div class="form-group">
                 <label for="new-first-name">First name</label>
-                <input type="text" class="form-control" id="firstName">
+                <input type="text" class="form-control" id="firstName0">
               </div>
               <div class="form-group">
                 <label for="new-last-name">Last name</label>
-                <input type="text" class="form-control" id="lastName">
+                <input type="text" class="form-control" id="lastName0">
               </div>
 
               <div id="new-emails">
@@ -145,6 +147,7 @@
                   </div>
                 </div>
               </div>
+            </div>
 
               <div class="class-choice">
                 <label>Travel class (applies to all travelers)</label>
@@ -165,7 +168,7 @@
                 </div>
                 <div class="form-group">
                   <label for="new-last-name1">Last name</label>
-                  <input type="text" class="form-control" id="lastName1">
+                  <input type="text" class="form-control"  id="lastName1">
                 </div>
               </div>
 
@@ -190,7 +193,7 @@
       <div>
         <!--used to be container -->
         <div class="fullTicket">
-          <h2>Confirmation</h2>
+          <h2 id="confirmation">Confirmation</h2>
           <p>Thank you for traveling with Air Nimbus!</p>
           <div class="row ticket">
             <div class="col-md-7 details">

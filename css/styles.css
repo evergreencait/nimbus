@@ -5,6 +5,10 @@
 
 
 /************* Basic Stylings *************/
+p {
+  color: white;
+}
+
 h1  {
   text-align: center;
 }
@@ -110,6 +114,11 @@ body {
 
 
 /************* Confirmation Page *************/
+
+#confirmation {
+  color: white;
+}
+
 
 .passForm {
   display: none;
