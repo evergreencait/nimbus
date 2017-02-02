@@ -109,6 +109,12 @@ body {
   margin-top: 20px;
 }
 
+.submitImg {
+  height: 200px;
+  margin-top: 400px;
+  margin-left: 200px;
+}
+
 /************* Confirmation Page *************/
 
 #confirmation {
@@ -147,6 +153,7 @@ body {
   margin-top: 20px;
 }
 
+
 /**************about page***************/
 
 .about-story {
@@ -157,10 +164,11 @@ body {
 }
 
 .about {
-  font-size: 25px;
+  font-size: 22px;
   color: white;
   padding-right: 40px;
   padding-top: -10px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .about:hover {
