@@ -57,8 +57,18 @@ var createReturnFlights = function() {
       var flightNumber = Math.floor(Math.random() * (900)) + 100;
       var departureTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 AM";
       var arrivalTime = (Math.floor(Math.random() * 12) + 1) + ":" + (Math.floor(Math.random() * 5) + 1) + "0 PM";
+      var price = 699
+      if (individualDestinationLocation === "The Upside-Down") {
+        price -= 700;
+      } else if (individualDestinationLocation === "Hogwarts") {
+        price += 1500;
+      } else if (individualDestinationLocation === "Jurassic Park") {
+        price += 1000;
+      } else if (flightNumber > 500) {
+        price -= 121;
+      }
       //create new Flight object
-      var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime);
+      var newFlight = new Flight(flightNumber, individualDepartureLocation, departureTime, individualDestinationLocation, arrivalTime, price);
       //push new Flight object to returning flights array
       returningFlights.push(newFlight);
     });
@@ -86,7 +96,7 @@ var returningFlightSearch = function(selectedDepartureLocation, selectedDestinat
     if(flight.departureLocation === selectedDepartureLocation && flight.destinationLocation === selectedDestinationLocation) {
 
       //adds text to the table if user's search matches
-      matchingFlightText += "<tr class='returnFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.destinationLocation + " " + "<span class='departureTime'>" + flight.destinationTime + "</span>"+ " - " + flight.departureLocation + " " +  "<span class='arrivalTime'>" + flight.departureTime + "</span></td><td></tr>";
+      matchingFlightText += "<tr class='returnFlightRow'><td>Air Nimbus</td><td>" + flight.number + "</td><td>" + flight.destinationLocation + " " + "<span class='departureTime'>" + flight.destinationTime + "</span>"+ " - " + flight.departureLocation + " " +  "<span class='arrivalTime'>" + flight.departureTime + "</span></td><td>$" + flight.price + "</tr>";
     }
   });
 }
@@ -102,6 +112,10 @@ function randomGate () {
 //front-end logic
 $(document).ready(function() {
   //generates flights for user
+  createDepartingFlights();
+  createReturnFlights();
+  createDepartingFlights();
+  createReturnFlights();
   createDepartingFlights();
   createReturnFlights();
   // beginning of when we submit form
@@ -144,12 +158,16 @@ $(document).ready(function() {
         var number1 = $(this).children(":nth-child(2)").text();
         var departureTime = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
         var landingTime = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
+        var departPrice = $(this).children(":nth-child(4)").text();
         var chosenFlight = new Flight(number1, departureTime);
         $("span#flightNumber1").text(number1);
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
+        $(".totalPrice").text(departPrice);
         $(".flightChoose").hide();
         $(".flightChoose2").show();
+
+        console.log(departPrice);
 
 
         $("tr.returnFlightRow").click(function() {
@@ -157,10 +175,12 @@ $(document).ready(function() {
           var number2 = $(this).children(":nth-child(2)").text();
           var departureTime2 = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
           var landingTime2 = $(this).children(":nth-child(3)").children(":nth-child(2)").text();
+          var returnPrice = $(this).children(":nth-child(4)").text();
           var chosenFlight2 = new Flight(number2, departureTime2);
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
+          $("#totalPrice").text(parseInt(departPrice.slice(1)) + parseInt(returnPrice.slice(1)));
 
 
           $(".flightChoose2").hide();
@@ -217,6 +237,7 @@ $(document).ready(function() {
     $("span#gateNumber1").text(generatedGate);
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
+
 
 // append passenger info to ticket
     passengerArray.forEach(function(passenger) {
