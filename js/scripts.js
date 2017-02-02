@@ -167,8 +167,6 @@ $(document).ready(function() {
         $(".flightChoose").hide();
         $(".flightChoose2").show();
 
-        console.log(departPrice);
-
 
         $("tr.returnFlightRow").click(function() {
           matchingFlightText = "";
@@ -241,7 +239,6 @@ $(document).ready(function() {
 
 // append passenger info to ticket
     passengerArray.forEach(function(passenger) {
-      console.log(passengerArray.indexOf(passenger));
       $(".passenger" + passengerArray.indexOf(passenger) + " .lastName").text(passengerArray [passengerArray.indexOf(passenger)].lastName);
       $(".passenger" + passengerArray.indexOf(passenger) + " .firstName").text(passengerArray [passengerArray.indexOf(passenger)].firstName);
       $(".passenger" + passengerArray.indexOf(passenger) + " #seatNumber1").text(generatedSeat + passengerArray.indexOf(passenger));
