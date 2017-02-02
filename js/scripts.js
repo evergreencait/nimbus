@@ -234,7 +234,11 @@ $(document).ready(function() {
     // refactor later into loop!
 
     passengerArray.forEach(function(passenger) {
+      console.log(passengerArray.indexOf(passenger));
       $(".passenger" + passengerArray.indexOf(passenger) + " .lastName").text(passengerArray [passengerArray.indexOf(passenger)].lastName);
+      $(".passenger" + passengerArray.indexOf(passenger) + " .firstName").text(passengerArray [passengerArray.indexOf(passenger)].firstName);
+      $(".passenger" + passengerArray.indexOf(passenger) + " #seatNumber1").text(generatedSeat + passengerArray.indexOf(passenger));
+      $(".passenger" + passengerArray.indexOf(passenger) + " #seatNumber2").text(secondGeneratedSeat + passengerArray.indexOf(passenger));
 
     });
     // $(".passenger0 .lastName").text(passengerArray[0].lastName);
