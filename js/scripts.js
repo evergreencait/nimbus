@@ -161,7 +161,7 @@ $(document).ready(function() {
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
-          console.log(selectedNumberOfTravelers);
+
 
           $(".flightChoose2").hide();
           $(".passForm").show();
@@ -214,14 +214,14 @@ $(document).ready(function() {
     var passengerArray = [];
 
     for (var i = 0; i < parseInt(selectedNumberOfTravelers); i++) {
-      console.log("hi");
       var firstName = $("#firstName" + [i]).val();
-      console.log("#firstName" + [i]);
       var lastName = $("#lastName" + [i]).val();
-      var newPassenger = new Passenger (lastName, firstName);
+      var newPassenger = new Passenger (lastName.toUpperCase(), firstName.toUpperCase());
       passengerArray.push(newPassenger);
     }
-    console.log(passengerArray);
+
+
+
     // });
 
 
@@ -231,6 +231,23 @@ $(document).ready(function() {
     $("span#gateNumber1").text(generatedGate);
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
+    // refactor later into loop!
+    $(".passenger0 .lastName").text(passengerArray[0].lastName);
+    $(".passenger0 .firstName").text(passengerArray[0].firstName);
+    $(".passenger0 #seatNumber1").text(generatedSeat);
+    $(".passenger0 #seatNumber2").text(secondGeneratedSeat);
+
+
+    $(".passenger1 .lastName").text(passengerArray[1].lastName);
+    $(".passenger1 .firstName").text(passengerArray[1].firstName);
+    $(".passenger1 #seatNumber1").text(generatedSeat + 1);
+    $(".passenger1 #seatNumber2").text(secondGeneratedSeat +1);
+
+    $(".passenger2 .lastName").text(passengerArray[2].lastName);
+    $(".passenger2 .firstName").text(passengerArray[2].firstName);
+    $(".passenger2 #seatNumber1").text(generatedSeat + 2);
+    $(".passenger2 #seatNumber2").text(secondGeneratedSeat +2);
+
     $(".passenger0").show();
     $(".passForm").hide();
 
