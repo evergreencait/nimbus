@@ -10,6 +10,12 @@ function Flight(number, departureLocation, departureTime, destinationLocation, d
   this.price = price
 }
 
+function Passenger(lastName, firstName, seatNumber) {
+  this.lastName = lastName,
+  this.firstName = firstName,
+  this.seatNumber = seatNumber
+}
+
 //empty string and arrays to be used within declared functions
 var matchingFlightText = "";
 var returningFlights = [];
@@ -154,6 +160,7 @@ $(document).ready(function() {
           $("span#flightNumber2").text(number2);
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
+          console.log(selectedNumberOfTravelers);
           if (selectedNumberOfTravelers === "1") {
             $("#passenger1").hide();
             $("#passenger2").hide();
@@ -174,20 +181,33 @@ $(document).ready(function() {
   $("form#new-passenger").submit(function(event) {
     event.preventDefault();
     $("body").toggleClass("departBG")
-    var inputs = ["lastName", "firstName"];
-
-    inputs.forEach(function(input) {
-      var userInput = $("input#" + input).val();
-      var inputUpper = userInput.toUpperCase();
-      $("span." + input).text(inputUpper);
-    });
-
+    // var inputs = ["lastName", "firstName"];
+    //
+    // inputs.forEach(function(input) {
+    //   var userInput = $("input#" + input).val();
+    //   var inputUpper = userInput.toUpperCase();
+    //   $("span." + input).text(inputUpper);
     var inputtedEmail = $("#email").val();
     var inputtedClass = $("#travelClass").val();
     var generatedSeat = randomSeat();
     var generatedGate = randomGate();
     var secondGeneratedSeat = randomSeat();
     var secondGeneratedGate = randomGate();
+    var selectedNumberOfTravelers = $("#traveler-number").val();
+
+    var passengerArray = [];
+
+    for (var i = 0; i < parseInt(selectedNumberOfTravelers); i++) {
+      console.log("hi");
+      var firstName = $("#firstName" + [i]).val();
+      console.log("#firstName" + [i]);
+      var lastName = $("#lastName" + [i]).val();
+      var newPassenger = new Passenger (lastName, firstName);
+      passengerArray.push(newPassenger);
+    }
+    console.log(passengerArray);
+    // });
+
 
     $("span.travelClass").text(inputtedClass);
     $("span.email").text(inputtedEmail);
