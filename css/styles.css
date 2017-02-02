@@ -166,6 +166,10 @@ body {
   border-radius: 0;
 }
 
+.about-us h3 {
+  margin-top: 10px;
+}
+
 .about-us, .about-story {
   padding: 20px;
 }
@@ -182,7 +186,7 @@ body {
   background-image: url('../img/jet.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 20% 30%;
+  background-position: 10% 30%;
 
 }
 
