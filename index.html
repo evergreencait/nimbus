@@ -126,10 +126,10 @@
 
       <div>
         <!--used to be container -->
-        <div class="passForm">
-          <h2>Enter your information</h2>
+        <!-- <div class="passForm"> -->
           <form id="new-passenger">
-            <div id="passenger0">
+            <div id="passenger0" class="passForm">
+              <h2>Enter your information</h2>
               <div class="form-group">
                 <label for="new-first-name">First name</label>
                 <input type="text" class="form-control" id="firstName0">
@@ -149,7 +149,7 @@
               </div>
             </div>
 
-              <div class="class-choice">
+              <div class="class-choice passForm">
                 <label>Travel class (applies to all travelers)</label>
                 <select class="form-control" id="travelClass">
                   <option></option>
@@ -160,7 +160,7 @@
                 </select>
               </div>
 
-              <div id="passenger1">
+              <div id="passenger1" class="passForm">
                 <h2>Enter information for Passenger 1</h2>
                 <div class="form-group">
                   <label for="new-first-name1">First name</label>
@@ -172,7 +172,7 @@
                 </div>
               </div>
 
-              <div id="passenger2">
+              <div id="passenger2" class="passForm">
                 <h2>Enter information for Passenger 2</h2>
                 <div class="form-group">
                   <label for="new-first-name2">First name</label>
@@ -184,10 +184,11 @@
                 </div>
               </div>
 
-
-            <button type="submit" class="btn btn-info book">Submit</button>
+            <div class="passForm">
+              <button type="submit" class="btn btn-info book">Submit</button>
+            </div>
           </form>
-        </div>
+        <!-- </div> -->
       </div>
 
       <div>

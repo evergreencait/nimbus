@@ -123,22 +123,22 @@ $(document).ready(function() {
     $(".departing-flight-options").append(matchingFlightText);
 
 
-      $("span.departure").text(selectedDepartureLocation);
-      $("span.destination").text(selectedDestinationLocation);
-      $("span.departure2").text(selectedDestinationLocation);
-      $("span.destination2").text(selectedDepartureLocation);
-      $("span.date1").text(selectedDateDeparture);
-      $("span.date2").text(selectedDateArrival);
-      $(".flightChoose").show();
-      $(".flightSelection").hide();
+    $("span.departure").text(selectedDepartureLocation);
+    $("span.destination").text(selectedDestinationLocation);
+    $("span.departure2").text(selectedDestinationLocation);
+    $("span.destination2").text(selectedDepartureLocation);
+    $("span.date1").text(selectedDateDeparture);
+    $("span.date2").text(selectedDateArrival);
+    $(".flightChoose").show();
+    $(".flightSelection").hide();
 
 
     $("tr.departFlightRow").click(function() {
       matchingFlightText = "";
       var flightType = $("input:radio[name=trip]:checked").val();
       if (flightType === "roundTrip") {
-
         returningFlightSearch(selectedDepartureLocation, selectedDestinationLocation);
+        //append chosen return flight to tickets
         $(".return-flight-options").append(matchingFlightText);
         var number1 = $(this).children(":nth-child(2)").text();
         var departureTime = $(this).children(":nth-child(3)").children(":nth-child(1)").text();
@@ -147,8 +147,9 @@ $(document).ready(function() {
         $("span#flightNumber1").text(number1);
         $("span#departTime1").text(departureTime);
         $("span#landTime1").text(landingTime);
-        $(".flightChoose2").show();
+        // debugger;
         $(".flightChoose").hide();
+        $(".flightChoose2").show();
 
 
         $("tr.returnFlightRow").click(function() {
@@ -161,18 +162,32 @@ $(document).ready(function() {
           $("span#departTime2").text(departureTime2);
           $("span#landTime2").text(landingTime2);
           console.log(selectedNumberOfTravelers);
+
+          $(".flightChoose2").hide();
+          $(".passForm").show();
           if (selectedNumberOfTravelers === "1") {
             $("#passenger1").hide();
             $("#passenger2").hide();
           } else if (selectedNumberOfTravelers === "2") {
             $("#passenger2").hide();
           }
-          $(".passForm").show();
+
         });
       } else {
+
+        //  else {
+        //   $(".passForm").show();
+        // }
+
+        $(".flightChoose").hide();
         $(".passForm").show();
+        if (selectedNumberOfTravelers === "1") {
+          $("#passenger1").hide();
+          $("#passenger2").hide();
+        } else if (selectedNumberOfTravelers === "2") {
+          $("#passenger2").hide();
+        }
       }
-      $(".flightChoose2").hide();
     });
   });
 
