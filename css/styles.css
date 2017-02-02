@@ -112,7 +112,24 @@ body {
 .submitImg {
   height: 200px;
   margin-top: 400px;
-  margin-left: 200px;
+  margin-left: 150px;
+}
+
+.submitImg2 {
+  height: 200px;
+  margin-top: 400px;
+  margin-left: 350px;
+}
+
+.submitImg3 {
+  height: 200px;
+  margin-top: 500px;
+  margin-left: 650px;
+}
+
+
+blockquote {
+    border-left: none;
 }
 
 /************* Confirmation Page *************/
@@ -163,7 +180,6 @@ body {
   border: 10px solid gray;
   background-color: gray;
 }
-
 
 /**************about page***************/
 
