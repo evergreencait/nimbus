@@ -232,21 +232,26 @@ $(document).ready(function() {
     $("span#seatNumber2").text(secondGeneratedSeat);
     $("span#gateNumber2").text(secondGeneratedGate);
     // refactor later into loop!
-    $(".passenger0 .lastName").text(passengerArray[0].lastName);
-    $(".passenger0 .firstName").text(passengerArray[0].firstName);
-    $(".passenger0 #seatNumber1").text(generatedSeat);
-    $(".passenger0 #seatNumber2").text(secondGeneratedSeat);
 
+    passengerArray.forEach(function(passenger) {
+      $(".passenger" + passengerArray.indexOf(passenger) + " .lastName").text(passengerArray [passengerArray.indexOf(passenger)].lastName);
 
-    $(".passenger1 .lastName").text(passengerArray[1].lastName);
-    $(".passenger1 .firstName").text(passengerArray[1].firstName);
-    $(".passenger1 #seatNumber1").text(generatedSeat + 1);
-    $(".passenger1 #seatNumber2").text(secondGeneratedSeat +1);
-
-    $(".passenger2 .lastName").text(passengerArray[2].lastName);
-    $(".passenger2 .firstName").text(passengerArray[2].firstName);
-    $(".passenger2 #seatNumber1").text(generatedSeat + 2);
-    $(".passenger2 #seatNumber2").text(secondGeneratedSeat +2);
+    });
+    // $(".passenger0 .lastName").text(passengerArray[0].lastName);
+    // $(".passenger0 .firstName").text(passengerArray[0].firstName);
+    // $(".passenger0 #seatNumber1").text(generatedSeat);
+    // $(".passenger0 #seatNumber2").text(secondGeneratedSeat);
+    //
+    //
+    // $(".passenger1 .lastName").text(passengerArray[1].lastName);
+    // $(".passenger1 .firstName").text(passengerArray[1].firstName);
+    // $(".passenger1 #seatNumber1").text(generatedSeat + 1);
+    // $(".passenger1 #seatNumber2").text(secondGeneratedSeat +1);
+    //
+    // $(".passenger2 .lastName").text(passengerArray[2].lastName);
+    // $(".passenger2 .firstName").text(passengerArray[2].firstName);
+    // $(".passenger2 #seatNumber1").text(generatedSeat + 2);
+    // $(".passenger2 #seatNumber2").text(secondGeneratedSeat +2);
 
     $(".passenger0").show();
     $(".passForm").hide();
