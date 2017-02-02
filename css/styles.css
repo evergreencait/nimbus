@@ -43,7 +43,7 @@ body {
 /************* Nav Bar *************/
 
 .navbar {
-  background-color: #276d84;
+  background-color: #388bc9;
   font-family: 'Pattaya', sans-serif
 }
 
@@ -177,8 +177,8 @@ blockquote {
   margin-right: 180px;
   font-size: 50px;
   color: white;
-  border: 10px solid gray;
-  background-color: gray;
+  padding-left: 20px;
+  background-color: rgba(168,168,168,0.5);
 }
 
 /**************about page***************/
